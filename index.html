@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @import 'https://fonts.googleapis.com/css?family=Lily+Script+One';
+body {
+  background: url(https://images.unsplash.com/photo-1605106715994-18d3fecffb98?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1263&q=80);
+  font-family: 'Lily Script One';
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+* {
+    /* border: 1px solid red; */
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+  width: 280px;
+  height: 400px;
+  margin: -150px;
+  float: left;
+  perspective: 500px;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border: 10px solid #fff;
+  border-radius: 20px;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .content {
+  transform: rotateY( 180deg ) ;
+  transition: transform 0.5s;
+}
+
+.card.active .content {
+  transform: rotateY( 180deg ) ;
+  transition: transform 0.5s;
+}
+
+.front,
+.back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: white;
+  color: #03446A;
+  background-color: #fae849;
+  text-align: center;
+  font-size: 60px;
+  border-radius: 5px;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.front {
+    display: flex;
+    justify-content: space-between;
+}
+
+#front-message {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    z-index: 3;
+    margin-left: 80px;
+}
+
+.front img.hero-image {
+    width: 50%;
+    height: 100%;
+    clip-path: polygon(44% 16%, 100% 0, 100% 100%, 56% 100%, 25% 69%);
+}
+
+.front .des {
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+    margin-left: 50px;
+}
+
+.back {
+  background: #03446A;
+  color: white;
+  transform: rotateY( 180deg );
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+    </style>
+</head>
+<body>
+        <div class="card">
+            <div class="content">
+              <div class="front">
+                <!-- <div id="front-message">
+                    <p>Happy Birthday <br> <i style="font-size: 8rem;">Lynn!</i> </p>
+                </div>
+                <img src="https://ucf064b8745ef00fca38b7f14ea9.previews.dropboxusercontent.com/p/thumb/AB88f5Kk-0brn5HxgMiorsGhhNGTxqbvWEh1PmkNH7-HTfQPVSUZhUg1Z3RPFxiY8bWZdQNkkljJqMR-hXQ0MPBnDZ-56GRc-aBl14-sYj6Mnh0hWkAf5VIfW52O4fzpZv8a01GhGXOvVj525AfMSjCWEg_MMpK8PusXYfkKzlNpDT6F5oYOwFHi-viyj-4pb_g-O5NWHnqEdwDxmqncnehV2eZnnKh_hDJejJbxwrj9iu8h9JDOG-bBDpOQJqhQmIS8zanoV3DWbLONZXOlKqlsDnTUf6VoEjiLo-W2az2WPm7boLn6kCEqpIL-zBvA2QZro6L64Wfv-eYNC59gjDNYzZAIOSLahooWeDf9ar7jhw/p.jpeg" alt="The One And Only LYNN" class="hero-image">
+                <img src="https://assets.stickpng.com/images/580b585b2edbce24c47b2758.png" alt="" class="des"> -->
+                <img src="./Cream Illustrated Greeting Happy Birthday Poster.jpg" alt="">
+              </div>
+              <div class="back">
+                To Lynn
+                <p style="font-size: 1.3rem; font-family: 'Times New Roman', Times, serif;">I hope you have a day as special as you are. As you already know, I'm not good with words when it comes to expressing emotions. But I just want you to know that I am grateful for all the things you've done for us. Me and the pigs all wish you the best in the year ahead!</p>
+              </div>
+            </div>
+          </div>
+        <div>
+            <script>
+                const card = document.querySelector('.card');
+
+                card.addEventListener('click', () => {
+                    card.classList.toggle('active');
+                })
+            </script>
+</body>
+</html>
